@@ -6,18 +6,15 @@ from sklearn.utils import class_weight
 from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
 import numpy as np
 
-# ============================================================
-#  RUTAS
-# ============================================================
+#  RUTES
 PATH_KCL     = r"C:\Users\aldec\Downloads\ParkinsonVoiceApp\26_29_09_2017_KCL\26-29_09_2017_KCL"
 PATH_HEALTHY = r"C:\Users\aldec\Downloads\ParkinsonVoiceApp\train-clean-100"
 PATH_DB_IT   = r"C:\Users\aldec\Downloads\ParkinsonVoiceApp\DB_IT"
 
-# ============================================================
 #  CARGA CON AUGMENTATION
 #  aug_pd=4   → cada audio PD genera 1 original + 4 variantes
 #  aug_healthy=4 → igualado a PD: ~2000 sanos vs ~2000 PD
-# ============================================================
+
 X, y = load_datasets(
     PATH_KCL, PATH_HEALTHY, PATH_DB_IT,
     max_samples=457,
