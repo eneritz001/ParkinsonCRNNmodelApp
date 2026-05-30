@@ -162,7 +162,7 @@ print("="*40)
 print(f"Accuracy:  {accuracy:.4f} ({accuracy*100:.2f}%)")
 print(f"F1-Score:  {f1:.4f}")
 print("\nFull report:")
-print(classification_report(y_test, y_pred, target_names=['Sano (0)', 'Parkinson (1)']))
+print(classification_report(y_test, y_pred, target_names=['Healthy (0)', 'Parkinson (1)']))
 
 # Training curve
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -175,7 +175,7 @@ axes[0].legend()
 
 axes[1].plot(history.history['accuracy'],     label='Train acc')
 axes[1].plot(history.history['val_accuracy'], label='Val acc')
-axes[1].set_title('Loss by epoch')
+axes[1].set_title('Accuracy by epoch')
 axes[1].set_xlabel('Epoch')
 axes[1].legend()
 
